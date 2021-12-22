@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter_api_listview_image_and_text/welcome.dart';
 import 'package:http/http.dart' as http;
 
 Future<List<Data>> fetchData() async {
@@ -81,6 +82,11 @@ class _MyAppState extends State<MyApp> {
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: ListTile(
+                            onTap: (){
+Navigator.push(context, MaterialPageRoute(builder: (context)=>Welcome(id: index, name:data[index].FirstName ,)));
+
+
+                            },
                             leading: CircleAvatar(
                               radius: 40,
                               
